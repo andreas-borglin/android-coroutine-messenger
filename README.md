@@ -5,7 +5,7 @@ The goal of this library is to make it easier for Android applications that are 
 
 This project was inspired by [Android Rx-Messenger](https://github.com/Aevi-UK/android-rxmessenger), an open source project I've contributed to from working with AEVI.
 
-**Note** - This project is currently in a proof of concept stage only and is not ready for real use nor are the artifacts published anywhere yet.
+** Note *** - This project is currently in a **proof of concept stage only** and is not ready for real use nor are the artifacts published anywhere yet.
 
 ## Motivation
 There is a lot of boilerplate code required to bind to services and set up a mechanism to send messages between services. In addition, it is crucial that a sensible threading strategy is in place to ensure the main thread can focus on UI and not I/O.
@@ -13,7 +13,7 @@ There is a lot of boilerplate code required to bind to services and set up a mec
 This library will integrate nicely with applications that already use coroutines to manage asynchronous tasks, which will be increasingly common now that Google themselves endorse Kotlin and provide coroutine support in their Jetpack libraries.
 
 ## Technical details
-[Bound services](https://developer.android.com/guide/components/bound-services) are used to establish a connection between services, after which [Messengers](https://developer.android.com/guide/components/bound-services#Messenger) are used to send messages.
+[Bound services](https://developer.android.com/guide/components/bound-services) are used to establish a connection between services, after which [Messengers](https://developer.android.com/guide/components/bound-services#Messenger) are used to send messages. In the first release, also looking to support using websockets for communication to avoid the Android Binder limitations.
 
 [Channels](https://kotlinlang.org/docs/reference/coroutines/channels.html) are exposed by the library to allow the application to receive and send messages.
 
