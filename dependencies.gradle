@@ -1,0 +1,46 @@
+ext {
+    // Presentation
+    appCompatVersion = '1.0.2'
+
+    // Kotlin
+    ktxVersion = '1.0.1'
+    kotlinCoroutinesVersion = '1.2.1'
+
+    // Domain
+    lifecycleVersion = '2.2.0-alpha01'
+    androidMockableVersion = '26'
+
+    // Test
+    junitVersion = '4.12'
+    assertJVersion = '3.11.1'
+    kotlinCoroutinesTest = '1.2.1'
+    architectureCoreTestingVersion = '1.1.1'
+    mockitoVersion = '2.27.0'
+    liveDataTestVersion = '1.1.0'
+
+    presentationDependencies = [
+            appCompat: "androidx.appcompat:appcompat:$appCompatVersion"
+    ]
+
+    kotlinDependencies = [
+            kotlinStdlib           : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            ktx                    : "androidx.core:core-ktx:$ktxVersion",
+            kotlinCoroutines       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion",
+            kotlinCoroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutinesVersion"
+    ]
+
+    domainDependencies = [
+            lifecycleExtensions  : "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion",
+            lifecycleViewModelKtx: "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion",
+            androidMockable      : "com.google:android-mockable-default-values:$androidMockableVersion"
+    ]
+
+    testDependencies = [
+            junit               : "junit:junit:$junitVersion",
+            assertJ             : "org.assertj:assertj-core:$assertJVersion",
+            kotlinCoroutinesTest: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinCoroutinesVersion",
+            archCoreTest        : "android.arch.core:core-testing:$architectureCoreTestingVersion",
+            mockito             : "org.mockito:mockito-core:$mockitoVersion",
+            liveDataTest        : "com.jraska.livedata:testing-ktx:$liveDataTestVersion"
+    ]
+}

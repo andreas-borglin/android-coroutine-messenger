@@ -38,7 +38,8 @@ class ClientActivity : AppCompatActivity() {
         }
 
         override fun onServiceDisconnected(component: ComponentName) {
-            // TODO
+            Log.i("ClientActivity", "Service disconnected - finishing")
+            finish()
         }
 
     }

@@ -37,6 +37,8 @@ class AncomeClient(val context: Context) {
         }
     }
 
+    // TODO fun startActivity from here? Could activity get access to stuff via "by" as koin does?
+
     fun disconnect() {
         connection?.let {
             context.unbindService(it)

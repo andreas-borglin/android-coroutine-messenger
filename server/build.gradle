@@ -1,10 +1,12 @@
 apply plugin: 'kotlin'
+apply from: "../dependencies.gradle"
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.google:android-mockable-default-values:26"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1"
+    api kotlinDependencies.kotlinStdlib
+    api kotlinDependencies.ktx
+    api kotlinDependencies.kotlinCoroutines
+    api kotlinDependencies.kotlinCoroutinesAndroid
+    implementation domainDependencies.androidMockable
     api project(":common")
 }
 

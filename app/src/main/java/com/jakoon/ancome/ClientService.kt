@@ -10,6 +10,7 @@ import com.jakoon.ancome.client.AncomeClient
 import com.jakoon.ancome.common.AncomeMessenger
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.launch
 
@@ -30,17 +31,22 @@ class ClientService : Service() {
         return binder
     }
 
+    override fun onUnbind(intent: Intent?): Boolean {
+        scope.cancel()
+        ancomeClient.disconnect()
+
+        return super.onUnbind(intent)
+    }
+
     suspend fun connect() {
         ancomeClient = AncomeClient(this@ClientService)
         ancomeMessenger = ancomeClient.connect(ComponentName(packageName, ServerService::class.java.name))
     }
 
-    // TODO probs race condition
     fun receiveMessages(): ReceiveChannel<String> = ancomeMessenger.receiveChannel()
 
     fun sendMessage(message: String) {
         scope.launch {
-            Log.i("ClientService", "sendMessage")
             ancomeMessenger.sendChannel().send(message)
         }
     }

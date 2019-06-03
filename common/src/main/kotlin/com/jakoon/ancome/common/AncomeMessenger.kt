@@ -11,10 +11,11 @@ import kotlinx.coroutines.launch
 
 abstract class AncomeMessenger {
 
-    internal val sendChannel = Channel<String>()
-    internal val receiveChannel = Channel<String>()
-    internal val scope = CoroutineScope(Dispatchers.IO)
+    protected val sendChannel = Channel<String>()
+    protected val receiveChannel = Channel<String>()
+    protected val scope = CoroutineScope(Dispatchers.IO)
 
+    // TODO temp variable
     var where = "Client"
 
     init {
@@ -35,6 +36,6 @@ abstract class AncomeMessenger {
         receiveChannel.close()
     }
 
-    internal abstract fun sendMessage(message: String)
+    protected abstract fun sendMessage(message: String)
 
 }

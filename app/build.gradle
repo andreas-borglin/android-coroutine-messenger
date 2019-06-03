@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply from: "../dependencies.gradle"
 
 android {
     compileSdkVersion 28
@@ -11,7 +10,7 @@ android {
         minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "0.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -23,14 +22,11 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation presentationDependencies.appCompat
     implementation project(":client")
     implementation project(":server")
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.1"
-    testImplementation 'junit:junit:4.12'
+    testImplementation testDependencies.junit
+    // TODO
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }

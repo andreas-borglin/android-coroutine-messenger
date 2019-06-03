@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class IncomingHandler : Handler(Looper.getMainLooper()) {
 
-    val channel = Channel<String>()
+    private val channel = Channel<String>()
     private val scope = CoroutineScope(Dispatchers.IO)
     var replyToMessenger: Messenger? = null
 
