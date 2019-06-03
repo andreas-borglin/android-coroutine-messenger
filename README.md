@@ -5,7 +5,7 @@ The goal of this library is to make it easier for Android applications that are 
 
 This project was inspired by [Android Rx-Messenger](https://github.com/Aevi-UK/android-rxmessenger), an open source project I've contributed to from working with AEVI.
 
-** Note *** - This project is currently in a **proof of concept stage only** and is not ready for real use nor are the artifacts published anywhere yet.
+**Note** - This project is currently in a **proof of concept stage only** and is not ready for real use nor are the artifacts published anywhere yet.
 
 ## Motivation
 There is a lot of boilerplate code required to bind to services and set up a mechanism to send messages between services. In addition, it is crucial that a sensible threading strategy is in place to ensure the main thread can focus on UI and not I/O.
