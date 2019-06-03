@@ -64,10 +64,9 @@ class ExampleService : AncomeService() {
         scope.launch {
             // Simply loop (and suspend) for incoming messages, and reply back after a 1 second delay
             for (message in messenger.receiveChannel()) {
-                Log.i("ServerService", "server received message")
+                Log.i("ExampleService", "Received message: $message")
                 delay(1000)
                 messenger.sendChannel().send("Hello I received: $message")
-                Log.i("ServerService", "Sent response")
             }
         }
     }
