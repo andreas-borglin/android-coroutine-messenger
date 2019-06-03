@@ -3,7 +3,7 @@ A messenger solution using [Kotlin coroutines](https://kotlinlang.org/docs/refer
 
 The goal of this library is to make it easier for Android applications that are already using Kotlin coroutines to communicate between Android components (services and activities). This can be used either internally in an application or to communicate between different applications.
 
-This project was inspired by (Android Rx-Messenger)[https://github.com/Aevi-UK/android-rxmessenger], an open source project I've contributed to from working with AEVI.
+This project was inspired by [Android Rx-Messenger](https://github.com/Aevi-UK/android-rxmessenger), an open source project I've contributed to from working with AEVI.
 
 **Note** - This project is currently in a proof of concept stage only and is not ready for real use nor are the artifacts published anywhere yet.
 
